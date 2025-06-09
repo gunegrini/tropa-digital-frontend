@@ -113,19 +113,22 @@ export default function LoginPage() {
   }, []);
 
   const handleLogin = () => {
+ 
+    const defaultEmail = 'admin@teste.com';
+    const defaultPassword = '123456';
+  
+   
     const loginData = localStorage.getItem('login');
-    if (!loginData) {
-      setError(true);
-      return;
-    }
-
-    const saved = JSON.parse(loginData);
+    const saved = loginData ? JSON.parse(loginData) : { email: defaultEmail, password: defaultPassword };
+  
     if (email === saved.email && password === saved.password) {
       login(email, password);
     } else {
       setError(true);
     }
   };
+  
+  
 
   return (
     <Container>
