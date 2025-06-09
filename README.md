@@ -1,40 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Teste Técnico - Desenvolvedor(a) Frontend | Tropa Digital
 
-## Getting Started
+Este repositório contém a implementação do desafio prático solicitado pela equipe da Tropa Digital para a vaga de Desenvolvedor(a) Frontend.
 
-First, run the development server:
+## 🔗 Link do Projeto Publicado
+
+Acesse o projeto online em: [https://seu-projeto.vercel.app](https://seu-projeto.vercel.app)
+
+## 🧪 Desafio Proposto
+
+O desafio consiste no desenvolvimento de:
+
+- ✅ Tela de Login funcional (com simulação de autenticação)
+- ✅ Tela Interna (Dashboard)
+- ✅ Navegação lateral (Sidebar)
+- ✅ Funcionalidade de alteração de dados (nome)
+- ✅ Páginas adicionais: Eventos, Equipes e Inscrições
+- ✅ Layout responsivo, fiel ao Figma
+- ✅ Armazenamento e persistência de dados com `localStorage`
+- ✅ Feedback visual de erros e sucesso
+
+## 🛠 Tecnologias Utilizadas
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Estilização**: [Styled Components](https://styled-components.com/)
+- **Ícones**: [Lucide React](https://lucide.dev/)
+- **Deploy**: [Vercel](https://vercel.com/)
+- **Gerenciamento de Autenticação**: Context API + `localStorage`
+
+## 🔐 Fluxo de Autenticação
+
+- O login é simulado e armazenado no `localStorage`.
+- Dados persistem entre sessões.
+- Tela de login pré-preenche os campos se os dados estiverem salvos.
+- Usuário pode alterar o **nome** cadastrado através da tela "Alterar Dados".
+
+## 🧭 Estrutura de Páginas
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+/pages
+├── index.tsx           # Tela de login
+├── dashboard.tsx       # Tela principal após login
+├── alterar-dados.tsx   # Página para alterar nome do usuário
+├── eventos.tsx         # Página de eventos
+├── equipes.tsx         # Página de equipes
+├── inscricoes.tsx      # Página de inscrições
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+📁 Organização
+bash
+Copiar
+Editar
+/components
+└── SidebarLayout.tsx   # Componente de layout com Sidebar responsiva
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+/contexts
+└── AuthContext.tsx     # Gerencia estado global de autenticação
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+💾 Dados para Login
+Email: admin@teste.com
+Senha: 123456
