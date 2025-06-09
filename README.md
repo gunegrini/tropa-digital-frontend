@@ -1,62 +1,65 @@
-# Teste Técnico - Desenvolvedor(a) Frontend | Tropa Digital
+# 🚀 Teste Técnico - Desenvolvedor(a) Frontend | Tropa Digital
 
-Este repositório contém a implementação do desafio prático solicitado pela equipe da Tropa Digital para a vaga de Desenvolvedor(a) Frontend.
+Este repositório contém a implementação do desafio prático para a vaga de Desenvolvedor(a) Frontend da Tropa Digital.
 
-## 🔗 Link do Projeto Publicado
+---
 
-Acesse o projeto online em: [https://seu-projeto.vercel.app](https://seu-projeto.vercel.app)
+## 🔗 Projeto Online
 
-## 🧪 Desafio Proposto
+Acesse a versão publicada na Vercel:  
+👉 [https://tropa-digital-frontend-one.vercel.app](https://tropa-digital-frontend-one.vercel.app)
 
-O desafio consiste no desenvolvimento de:
+---
 
-- ✅ Tela de Login funcional (com simulação de autenticação)
-- ✅ Tela Interna (Dashboard)
-- ✅ Navegação lateral (Sidebar)
-- ✅ Funcionalidade de alteração de dados (nome)
-- ✅ Páginas adicionais: Eventos, Equipes e Inscrições
-- ✅ Layout responsivo, fiel ao Figma
-- ✅ Armazenamento e persistência de dados com `localStorage`
-- ✅ Feedback visual de erros e sucesso
+## 🧪 Requisitos Atendidos
+
+- ✅ Tela de **Login funcional** com simulação de autenticação
+- ✅ **Dashboard** acessível após login
+- ✅ **Sidebar responsiva** com navegação entre páginas
+- ✅ Página de **Alterar Dados** (nome, email e senha)
+- ✅ Telas adicionais: **Eventos**, **Equipes**, **Inscrições**
+- ✅ **Persistência de dados** com `localStorage`
+- ✅ **Validação visual** de erros e feedback de sucesso
+- ✅ **Responsivo**, compatível com mobile e desktop
+- ✅ Layout baseado no [Figma do desafio](https://www.figma.com/design/xzsmAYKHPRaqMTNBBolJQH/Teste-FRONTEND---Tropa-Digital?node-id=803-8066)
+
+---
 
 ## 🛠 Tecnologias Utilizadas
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Estilização**: [Styled Components](https://styled-components.com/)
 - **Ícones**: [Lucide React](https://lucide.dev/)
-- **Deploy**: [Vercel](https://vercel.com/)
-- **Gerenciamento de Autenticação**: Context API + `localStorage`
+- **Autenticação**: Context API + localStorage
+- **Hospedagem**: [Vercel](https://vercel.com/)
+
+---
 
 ## 🔐 Fluxo de Autenticação
 
-- O login é simulado e armazenado no `localStorage`.
-- Dados persistem entre sessões.
-- Tela de login pré-preenche os campos se os dados estiverem salvos.
-- Usuário pode alterar o **nome** cadastrado através da tela "Alterar Dados".
+- O login é **simulado** com dados armazenados no `localStorage`.
+- O usuário pode alterar seus dados em `/alterar-dados`, que são refletidos automaticamente.
+- Ao relogar, os campos de login são preenchidos automaticamente com os dados salvos.
+
+### Dados de Acesso Padrão
+
+Email: admin@teste.com
+Senha: 123456
+
 
 ## 🧭 Estrutura de Páginas
 
 ```bash
-/pages
-├── index.tsx           # Tela de login
-├── dashboard.tsx       # Tela principal após login
-├── alterar-dados.tsx   # Página para alterar nome do usuário
-├── eventos.tsx         # Página de eventos
-├── equipes.tsx         # Página de equipes
-├── inscricoes.tsx      # Página de inscrições
+src/pages
+├── index.tsx           # Login
+├── dashboard.tsx       # Tela interna
+├── alterar-dados.tsx   # Alteração de nome/email/senha
+├── eventos.tsx         # Tela de eventos
+├── equipes.tsx         # Tela de equipes
+└── inscricoes.tsx      # Tela de inscrições
 
+src/components
+└── SidebarLayout.tsx   # Layout principal com navegação lateral
 
-📁 Organização
-bash
-Copiar
-Editar
-/components
-└── SidebarLayout.tsx   # Componente de layout com Sidebar responsiva
-
-/contexts
-└── AuthContext.tsx     # Gerencia estado global de autenticação
-
-
-💾 Dados para Login
-Email: admin@teste.com
-Senha: 123456
+src/contexts
+└── AuthContext.tsx     # Controle de autenticação global
